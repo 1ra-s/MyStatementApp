@@ -1,0 +1,29 @@
+@model MyStatementApp.Models.StatementViewModel
+
+@{
+    ViewData["Title"] = "Create Statement";
+}
+
+<h1>Create Statement</h1>
+
+<form asp-action="CreateStatement">
+    <div class="form-group">
+        <label asp-for="AccountId">Account ID</label>
+        <input asp-for="AccountId" class="form-control" />
+        <span asp-validation-for="AccountId" class="text-danger"></span>
+    </div>
+    
+    <div class="form-group">
+        <label asp-for="StartDate">Start Date</label>
+        <input asp-for="StartDate" class="form-control" />
+        <span asp-validation-for="StartDate" class="text-danger"></span>
+    </div>
+    
+    <div class="form-group">
+        <label asp-for="EndDate">End Date</label>
+        <input asp-for="EndDate" class="form-control" />
+        <span asp-validation-for="EndDate" class="text-danger"></span>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Generate Statement</button>
+</form>

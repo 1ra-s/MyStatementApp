@@ -1,0 +1,51 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+main {
+  padding-top: 20px;
+}
+
+footer {
+  margin-top: 40px;
+  padding-top: 10px;
+  border-top: 1px solid #ccc;
+}
+
+/* Form Styles */
+form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Statement Result Styles */
+#statementContent {
+  display: none;
+}
+
+#statementContent.card {
+  border: 2px solid #007bff;
+}
+
+#statementContent.card .card-body {
+  min-height: 150px;
+}
+
+#downloadLink {
+  display: none;
+}

@@ -1,0 +1,43 @@
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using MyStatementApp.Models;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace MyStatementApp.Controllers
+{
+public class TransactionController : Controller
+{
+    private readonly ApplicationDbContext _context;
+
+    public TransactionController(ApplicationDbContext context)
+    {
+        _context = context;
+    }
+
+    public async Task<IActionResult> Index(int accountId, DateTime startDate, DateTime endDate)
+    {
+        var transactions = await _context.Transactions
+            .Where(t => t.AccountId == accountId && t.Date >= startDate && t.Date <= endDate)
+            .ToListAsync();
+        return View(transactions);
+    }
+
+    public IActionResult CreateStatement(int accountId)
+    {
+        return View(new CreateStatementViewModel { AccountId = accountId });
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> CreateStatement(CreateStatementViewModel model)
+    {
+        if (ModelState.IsValid)
+        {
+            return RedirectToAction(nameof(Index), new { accountId = model.AccountId, startDate = model.StartDate, endDate = model.EndDate });
+        }
+        return View(model);
+    }
+}
+}

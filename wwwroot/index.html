@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Statement App</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1 class="text-center">My Statement App</h1>
+        </header>
+
+        <main>
+            <section id="statementForm">
+                <h2>Generate Statement</h2>
+                <form id="generateForm">
+                    <div class="form-group">
+                        <label for="accountId">Account ID:</label>
+                        <input type="text" class="form-control" id="accountId" name="accountId" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Generate Statement</button>
+                </form>
+            </section>
+
+            <section id="statementResult" class="mt-5">
+                <h2>Generated Statement</h2>
+                <div id="statementContent" class="card">
+                    <div class="card-body">
+                        <p class="text-center">No statement generated yet.</p>
+                    </div>
+                </div>
+                <a id="downloadLink" class="btn btn-success mt-3 d-none" href="#" download>Download Statement</a>
+            </section>
+        </main>
+
+        <footer class="mt-5 text-center">
+            <p>&copy; 2024 MyStatementApp. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/site.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using MyStatementApp.Models;
+
+namespace MyStatementApp.Pages
+{
+    public class PrivacyModel : PageModel
+    {
+        public void OnGet()
+        {
+            // Logic for Privacy page
+        }
+    }
+}

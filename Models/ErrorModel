@@ -1,0 +1,16 @@
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using MyStatementApp.Models;
+
+namespace MyStatementApp.Pages
+{
+    public class ErrorModel : PageModel
+    {
+        public string RequestId { get; set; }
+        public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+
+        public void OnGet()
+        {
+            // Logic for Error page
+        }
+    }
+}

@@ -1,0 +1,26 @@
+@model IEnumerable<MyStatementApp.Models.Transaction>
+
+<h2>Statement</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Debit</th>
+            <th>Credit</th>
+            <th>Balance</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var transaction in Model)
+        {
+            <tr>
+                <td>@transaction.Date.ToString("yyyy-MM-dd")</td>
+                <td>@transaction.Description</td>
+                <td>@transaction.Debit</td>
+                <td>@transaction.Credit</td>
+                <td>@transaction.Balance</td>
+            </tr>
+        }
+    </tbody>
+</table>
